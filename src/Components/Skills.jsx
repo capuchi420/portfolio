@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Skills = () => {
+export const Skills = (props) => {
     return(
-        <Container>
+        <Container className={(props.show ? "show" : "no")}>
             <h2>Skills</h2>
 
             <div className="gallery">
@@ -24,6 +24,13 @@ export const Skills = () => {
 };
 
 const Container = styled.div`
+    &.show{
+        display: block;
+    }
+
+    &.no{
+        display: none;
+    }
     overflow: hidden;
 
     h2{

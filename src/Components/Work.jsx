@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Work = () => {
+export const Work = (props) => {
     return(
-        <Container>
+        <Container className={(props.show ? "show" : "no")}>
             <h1>Work Expirience</h1>
             <div>
                 <h2>Personal projects</h2>
@@ -18,6 +18,14 @@ export const Work = () => {
 };
 
 const Container = styled.div`
+    &.show{
+        display: block;
+    }
+
+    &.no{
+        display: none;
+    }
+
     margin-top: 4rem;
     padding: 1rem;
 
